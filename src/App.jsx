@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export default function PortfolioLandingPage() {
-  // --- Profile Image State ---
+  // --- 1. State and Handlers ---
   const [profileImage, setProfileImage] = useState(
     "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop"
   );
@@ -81,6 +81,7 @@ export default function PortfolioLandingPage() {
         {/* --- Interactive Profile Card --- */}
         <div className="relative flex justify-center">
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 blur-3xl opacity-30 rounded-full"></div>
+          
           <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-[2rem] p-6 shadow-2xl w-full max-w-md group">
             <label className="cursor-pointer block relative overflow-hidden rounded-3xl">
               <img
@@ -88,12 +89,13 @@ export default function PortfolioLandingPage() {
                 alt="Profile"
                 className="h-[450px] w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              {/* Hover Overlay */}
+              
               <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                 <p className="text-white font-medium bg-white/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/30">
                   Change Photo
                 </p>
               </div>
+
               <input 
                 type="file" 
                 accept="image/*" 
@@ -167,8 +169,7 @@ export default function PortfolioLandingPage() {
             <h3 className="text-4xl font-black mb-6">I Create Trendy Digital Experiences</h3>
             <p className="text-white/70 leading-relaxed text-lg">
               I specialize in modern websites, creative branding, AI-powered
-              content, and cinematic social media visuals. This portfolio is
-              built to be fully responsive and easy to deploy.
+              content, and cinematic social media visuals.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-6">
@@ -180,25 +181,21 @@ export default function PortfolioLandingPage() {
               <h4 className="text-5xl font-black mb-2">30K+</h4>
               <p className="text-white/60">Views Generated</p>
             </div>
-            <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-6 col-span-2">
-              <h4 className="text-3xl font-black mb-2">Clean • Fast • Responsive</h4>
-              <p className="text-white/60">Optimized for modern browsers and mobile devices.</p>
-            </div>
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="relative z-10 px-8 pb-24 max-w-7xl mx-auto">
+      <footer id="contact" className="relative z-10 px-8 pb-24 max-w-7xl mx-auto">
         <div className="backdrop-blur-xl bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-white/10 rounded-[2rem] p-10 text-center">
           <p className="uppercase tracking-[0.2em] text-cyan-400 text-sm mb-2">Contact</p>
           <h3 className="text-5xl font-black mb-6">Let’s Build Something Amazing</h3>
           <div className="flex flex-wrap justify-center gap-4">
             <a href="mailto:reymarttibe@gmail.com" className="px-6 py-3 rounded-2xl bg-white text-black font-semibold hover:scale-105 transition">Email Me</a>
-            <a href="https://www.linkedin.com/in/reymart-tibe-624b952b8/" target="_blank" className="px-6 py-3 rounded-2xl border border-white/20 hover:bg-white/10 transition">Linkedin</a>
+            <a href="https://www.linkedin.com/in/reymart-tibe-624b952b8/" target="_blank" className="px-6 py-3 rounded-2xl border border-white/20 hover:bg-white/10 transition">LinkedIn</a>
           </div>
         </div>
-      </section>
+      </footer>
     </div>
   );
 }
