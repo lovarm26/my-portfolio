@@ -20,7 +20,7 @@ const ProfileUpload = () => {
       {/* 1. The Image Preview */}
       <div style={{ marginBottom: '15px' }}>
         <img 
-          src={profileImage} 
+          src={profile.jpg} 
           alt="Profile" 
           style={{ width: '150px', height: '150px', borderRadius: '50%', objectFit: 'cover', border: '2px solid #ccc' }} 
         />
