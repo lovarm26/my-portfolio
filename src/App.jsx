@@ -1,18 +1,58 @@
 import React, { useState } from 'react';
 
-export default function PortfolioLandingPage() {
-  // --- 1. State and Handlers ---
-  const [profileImage, setProfileImage] = useState(
-    "https://www.facebook.com/share/1As2hcXtxd/"
-  );
+const ProfileUpload = () => {
+  // Tip: Use a direct image URL or a local placeholder for the initial state
+  const [profileImage, setProfileImage] = useState("https://via.placeholder.com/150");
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
+      // Creates a temporary local URL for the uploaded file
       const imageUrl = URL.createObjectURL(file);
       setProfileImage(imageUrl);
     }
   };
+
+  return (
+    <div style={{ textAlign: 'center', marginTop: '20px' }}>
+      <h2>Profile Picture</h2>
+      
+      {/* 1. The Image Preview */}
+      <div style={{ marginBottom: '15px' }}>
+        <img 
+          src={profileImage} 
+          alt="Profile" 
+          style={{ width: '150px', height: '150px', borderRadius: '50%', objectFit: 'cover', border: '2px solid #ccc' }} 
+        />
+      </div>
+
+      {/* 2. The File Input */}
+      <input 
+        type="file" 
+        accept="image/*" 
+        onChange={handleImageChange} 
+        id="imageUpload"
+        style={{ display: 'none' }} // Hidden for styling purposes
+      />
+      
+      {/* 3. A styled label to act as a button for the hidden input */}
+      <label 
+        htmlFor="imageUpload" 
+        style={{
+          padding: '10px 20px',
+          backgroundColor: '#007bff',
+          color: 'white',
+          borderRadius: '5px',
+          cursor: 'pointer'
+        }}
+      >
+        Upload New Image
+      </label>
+    </div>
+  );
+};
+
+export default ProfileUpload;
 
   const projects = [
     {
