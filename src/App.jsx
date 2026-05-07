@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 export default function PortfolioLandingPage() {
   // --- 1. State and Handlers ---
   const [profileImage, setProfileImage] = useState(
-    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop"
+    "https://www.facebook.com/share/1As2hcXtxd/"
   );
 
   const handleImageChange = (event) => {
