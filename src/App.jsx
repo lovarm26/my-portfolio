@@ -51,9 +51,6 @@ const ProfileUpload = () => {
     </div>
   );
 };
-
-export default ProfileUpload;
-
   const projects = [
     {
       title: "AI Video Generator",
