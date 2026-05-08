@@ -80,26 +80,6 @@ export default function PortfolioLandingPage() {
         </div>
       </section>
 
-      {/* Upload Section */}
-      <section className="relative z-10 px-8 py-16 max-w-7xl mx-auto">
-        <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-[2rem] p-8">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            <div>
-              <p className="uppercase tracking-[0.2em] text-cyan-400 text-sm mb-2">Upload Projects</p>
-              <h3 className="text-3xl font-bold mb-2">Add Your Latest Work</h3>
-              <p className="text-white/60 max-w-2xl">
-                Easily upload images, videos, or project previews to update your
-                portfolio anytime.
-              </p>
-            </div>
-            <label className="cursor-pointer px-6 py-4 rounded-2xl bg-gradient-to-r from-cyan-400 to-purple-500 text-black font-bold hover:scale-105 transition">
-              Upload Files
-              <input type="file" multiple className="hidden" />
-            </label>
-          </div>
-        </div>
-      </section>
-
       {/* Projects Section */}
       <section id="projects" className="relative z-10 px-8 py-20 max-w-7xl mx-auto">
         <div className="mb-10">
