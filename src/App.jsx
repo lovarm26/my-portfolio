@@ -1,56 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+// 1. Import your local photo from the assets folder
+import myProfilePic from './assets/profile.jpg';
 
-const ProfileUpload = () => {
-  // Tip: Use a direct image URL or a local placeholder for the initial state
-  const [profileImage, setProfileImage] = useState("https://via.placeholder.com/150");
-
-  const handleImageChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      // Creates a temporary local URL for the uploaded file
-      const imageUrl = URL.createObjectURL(file);
-      setProfileImage(imageUrl);
-    }
-  };
-
-  return (
-    <div style={{ textAlign: 'center', marginTop: '20px' }}>
-      <h2>Profile Picture</h2>
-      
-      {/* 1. The Image Preview */}
-      <div style={{ marginBottom: '15px' }}>
-        <img 
-          src={profile.jpg} 
-          alt="Profile" 
-          style={{ width: '150px', height: '150px', borderRadius: '50%', objectFit: 'cover', border: '2px solid #ccc' }} 
-        />
-      </div>
-
-      {/* 2. The File Input */}
-      <input 
-        type="file" 
-        accept="image/*" 
-        onChange={handleImageChange} 
-        id="imageUpload"
-        style={{ display: 'none' }} // Hidden for styling purposes
-      />
-      
-      {/* 3. A styled label to act as a button for the hidden input */}
-      <label 
-        htmlFor="imageUpload" 
-        style={{
-          padding: '10px 20px',
-          backgroundColor: '#007bff',
-          color: 'white',
-          borderRadius: '5px',
-          cursor: 'pointer'
-        }}
-      >
-        Upload New Image
-      </label>
-    </div>
-  );
-};
+export default function PortfolioLandingPage() {
   const projects = [
     {
       title: "AI Video Generator",
@@ -115,31 +67,19 @@ const ProfileUpload = () => {
           </div>
         </div>
 
-        {/* --- Interactive Profile Card --- */}
+        {/* --- Locked Profile Card --- */}
         <div className="relative flex justify-center">
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 blur-3xl opacity-30 rounded-full"></div>
           
           <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-[2rem] p-6 shadow-2xl w-full max-w-md group">
-            <label className="cursor-pointer block relative overflow-hidden rounded-3xl">
+            {/* 2. Removed the file input and labels to lock the photo */}
+            <div className="relative overflow-hidden rounded-3xl">
               <img
-                src={profileImage}
+                src={myProfilePic} // 3. Uses the stable imported asset
                 alt="Profile"
-                className="h-[450px] w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="h-[450px] w-full object-cover"
               />
-              
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <p className="text-white font-medium bg-white/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/30">
-                  Change Photo
-                </p>
-              </div>
-
-              <input 
-                type="file" 
-                accept="image/*" 
-                className="hidden" 
-                onChange={handleImageChange} 
-              />
-            </label>
+            </div>
 
             <div className="mt-6 flex items-center justify-between">
               <div>
