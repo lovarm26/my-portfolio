@@ -1,6 +1,6 @@
 import React from 'react';
 // 1. Import your local photo from the assets folder
-import myProfilePic from './assets/profile.jpg';
+import myProfilePic from './src/assets/profile.jpg';
 
 export default function PortfolioLandingPage() {
   const projects = [
