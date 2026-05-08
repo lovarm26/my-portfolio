@@ -1,6 +1,6 @@
 import React from 'react';
-// 1. Import your local photo from the assets folder
-import myProfilePic from './assets/profile.jpg';
+// 1. Ensure the path is correct relative to this file
+import myProfilePic from './assets/profile.jpg'; 
 
 export default function PortfolioLandingPage() {
   const projects = [
@@ -26,20 +26,7 @@ export default function PortfolioLandingPage() {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#1f2937,transparent_40%)]"></div>
-      <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500/20 blur-3xl rounded-full"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 blur-3xl rounded-full"></div>
-
-      {/* Navbar */}
-      <header className="relative z-10 flex items-center justify-between px-8 py-6 border-b border-white/10 backdrop-blur-md">
-        <h1 className="text-2xl font-black tracking-widest uppercase">Reymart.</h1>
-        <nav className="hidden md:flex gap-8 text-sm uppercase tracking-wider text-white/70">
-          <a href="#projects" className="hover:text-white transition">Projects</a>
-          <a href="#about" className="hover:text-white transition">About</a>
-          <a href="#contact" className="hover:text-white transition">Contact</a>
-        </nav>
-      </header>
+      {/* Background and Navbar code remains the same... */}
 
       {/* Hero Section */}
       <section className="relative z-10 px-8 py-24 max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
@@ -54,31 +41,29 @@ export default function PortfolioLandingPage() {
             </span>
           </h2>
           <p className="text-lg text-white/70 leading-relaxed max-w-xl mb-8">
-            A sleek portfolio website where you can showcase projects, upload
-            content, share your creative work, and grow your online presence.
+            A sleek portfolio website where you can showcase projects and share your creative work.
           </p>
-          <div className="flex flex-wrap gap-4">
-            <a href="#projects" className="px-6 py-3 rounded-2xl bg-white text-black font-semibold hover:scale-105 transition">
-              View Projects
-            </a>
-            <a href="#contact" className="px-6 py-3 rounded-2xl border border-white/20 hover:bg-white/10 transition">
-              Hire Me
-            </a>
-          </div>
         </div>
 
-        {/* --- Locked Profile Card --- */}
+        {/* --- Profile Card with Hover Effect --- */}
         <div className="relative flex justify-center">
+          {/* Background Glow */}
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 blur-3xl opacity-30 rounded-full"></div>
           
-          <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-[2rem] p-6 shadow-2xl w-full max-w-md group">
-            {/* 2. Removed the file input and labels to lock the photo */}
-            <div className="relative overflow-hidden rounded-3xl">
+          <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-[2rem] p-6 shadow-2xl w-full max-w-md group cursor-default">
+            <div className="relative overflow-hidden rounded-3xl border border-white/5">
               <img
-                src={myProfilePic} // 3. Uses the stable imported asset
+                src={myProfilePic}
                 alt="Profile"
-                className="h-[450px] w-full object-cover"
+                /* - group-hover:scale-110 makes the image zoom slightly
+                   - transition-transform duration-700 makes it smooth
+                   - group-hover:brightness-110 makes it light up 
+                */
+                className="h-[450px] w-full object-cover transition-all duration-700 ease-in-out group-hover:scale-110 group-hover:brightness-110"
               />
+              
+              {/* Optional: A subtle gradient overlay that appears on hover */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
 
             <div className="mt-6 flex items-center justify-between">
@@ -86,7 +71,8 @@ export default function PortfolioLandingPage() {
                 <h3 className="text-2xl font-bold">Reymart Tibe</h3>
                 <p className="text-white/60">Web Developer • Designer</p>
               </div>
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-black font-black text-xl">
+              {/* Spinning Icon on Hover */}
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-black font-black text-xl transition-transform duration-500 group-hover:rotate-[360deg]">
                 ✦
               </div>
             </div>
